@@ -2,37 +2,120 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root{
+  --ON: initial;
+  --OFF: ;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.theme-default,
+.theme-light{
+  --light: var(--ON);
+  --dark: var(--OFF)
+}
+
+.theme-dark{
+  --light: var(--OFF);
+  --dark: var(--ON);
+}
+
+/* @media (prefers-color-scheme: dark){
+  .theme-default{
+    --light: var(--OFF);
+    --dark: var(--ON);
   }
+} */
+
+:root{
+  --text: var(--light, black) var(--dark, #1E40AF);
+  --bg: var(--light, white) var(--dark, #60A5FA);
+  --btn-bg: var(--light, #E5E7EB) var(--dark, #34D399);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container{
+  margin: auto;
+  width: 45%;
+  border: 5px solid ;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: var(--bg, white);
+  color: var(--text, black);
+}
+
+.switch{
+  background-color: var(--btn-bg, #E5E7EB);
+  color: var(--text, white);
+}
+
+h1{
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  letter-spacing: (0.2rem, 1vw, 0.7rem);
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  color: var(--text, white);
+}
+
+.header{
+  border-bottom: 2px solid var(--border, black);
+}
+
+h2{
+  padding-left: 0.3rem;
+  border-bottom: 2px solid var(--border, black);
+  text-transform: uppercase;
+  text-align: left;
+  font-size: clamp(0.5rem, 1.5vw, 1rem);
+  color: var(--text, white);
+}
+
+.input-flex{
+  padding: 1rem;  
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  gap: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.input-add-btn{
+  background-color: var(--btn-bg, #E5E7EB);
+  color: var(--text, white);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.todo-list,
+.completed-list{
+  list-style: none; 
+  text-align: left;
+  padding-left: 0px;
+  color: var(--text, white);
+}
+
+.strike{
+  text-decoration: line-through;
+  color: var(--text, white);
+}
+
+.flex-container{
+  display: flex;
+  justify-content: space-around;
+  flex: 1 1 2;
+}
+
+.submit{
+  background-color: var(--btn-bg, #E5E7EB);
+  color: var(--text, white);
+}
+
+.clearScreen,
+.resetApp{
+  margin: 0.5em;
+  background-color: var(--btn-bg, #E5E7EB);
+  color: var(--text, white);
+}
+
+@media screen and (min-width: 700px){
+  .input-flex{
+    padding: 1rem;  
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
   }
 }
