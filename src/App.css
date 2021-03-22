@@ -95,7 +95,7 @@ h2{
 
 .flex-container{
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex: 1 1 2;
 }
 
